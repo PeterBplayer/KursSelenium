@@ -21,7 +21,7 @@ formatter.step({
 });
 formatter.step({
   "line": 5,
-  "name": "user inputs title \u003cfirstName\u003e, \u003clastName\u003e, \u003cemail\u003e, \u003cpassword\u003e, \u003cbirthDate\u003e",
+  "name": "user inputs \u003ctitle\u003e, \u003cfirstName\u003e, \u003clastName\u003e, \u003cemail\u003e, \u003cpassword\u003e, \u003cbirthDate\u003e",
   "keyword": "When "
 });
 formatter.step({
@@ -42,6 +42,7 @@ formatter.examples({
   "rows": [
     {
       "cells": [
+        "title",
         "firstName",
         "lastName",
         "email",
@@ -53,9 +54,10 @@ formatter.examples({
     },
     {
       "cells": [
-        "Karol",
+        "Mr.",
+        "Andrzej",
         "Kowolczyk",
-        "karol.kowolczyk@mail.com",
+        "andrzej.kowolczyk@mail.com",
         "12354",
         "11/09/1990"
       ],
@@ -64,9 +66,10 @@ formatter.examples({
     },
     {
       "cells": [
-        "Bartosz",
+        "Mrs.",
+        "Barbara",
         "Piętas",
-        "bart.pietas@mail.com",
+        "barbara.pietas@mail.com",
         "12345",
         "11/12/1990"
       ],
@@ -91,13 +94,14 @@ formatter.step({
 });
 formatter.step({
   "line": 5,
-  "name": "user inputs title Karol, Kowolczyk, karol.kowolczyk@mail.com, 12354, 11/09/1990",
+  "name": "user inputs Mr., Andrzej, Kowolczyk, andrzej.kowolczyk@mail.com, 12354, 11/09/1990",
   "matchedColumns": [
     0,
     1,
     2,
     3,
-    4
+    4,
+    5
   ],
   "keyword": "When "
 });
@@ -115,50 +119,54 @@ formatter.match({
   "location": "MyStoreRegistration.goToRegistrationPage()"
 });
 formatter.result({
-  "duration": 6505923400,
+  "duration": 4590407500,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Karol",
-      "offset": 18
+      "val": "Mr.",
+      "offset": 12
+    },
+    {
+      "val": "Andrzej",
+      "offset": 17
     },
     {
       "val": "Kowolczyk",
-      "offset": 25
+      "offset": 26
     },
     {
-      "val": "karol.kowolczyk@mail.com",
-      "offset": 36
+      "val": "andrzej.kowolczyk@mail.com",
+      "offset": 37
     },
     {
       "val": "12354",
-      "offset": 62
+      "offset": 65
     },
     {
       "val": "11/09/1990",
-      "offset": 69
+      "offset": 72
     }
   ],
-  "location": "MyStoreRegistration.userInputs(String,String,String,String,String)"
+  "location": "MyStoreRegistration.userInputs(String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 456510800,
+  "duration": 421531400,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStoreRegistration.Submit()"
 });
 formatter.result({
-  "duration": 1067649400,
+  "duration": 1236562600,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStoreRegistration.userIsRegistered()"
 });
 formatter.result({
-  "duration": 54700,
+  "duration": 793604300,
   "status": "passed"
 });
 formatter.scenario({
@@ -176,13 +184,14 @@ formatter.step({
 });
 formatter.step({
   "line": 5,
-  "name": "user inputs title Bartosz, Piętas, bart.pietas@mail.com, 12345, 11/12/1990",
+  "name": "user inputs Mrs., Barbara, Piętas, barbara.pietas@mail.com, 12345, 11/12/1990",
   "matchedColumns": [
     0,
     1,
     2,
     3,
-    4
+    4,
+    5
   ],
   "keyword": "When "
 });
@@ -200,13 +209,17 @@ formatter.match({
   "location": "MyStoreRegistration.goToRegistrationPage()"
 });
 formatter.result({
-  "duration": 4217421700,
+  "duration": 3551432500,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Bartosz",
+      "val": "Mrs.",
+      "offset": 12
+    },
+    {
+      "val": "Barbara",
       "offset": 18
     },
     {
@@ -214,36 +227,36 @@ formatter.match({
       "offset": 27
     },
     {
-      "val": "bart.pietas@mail.com",
+      "val": "barbara.pietas@mail.com",
       "offset": 35
     },
     {
       "val": "12345",
-      "offset": 57
+      "offset": 60
     },
     {
       "val": "11/12/1990",
-      "offset": 64
+      "offset": 67
     }
   ],
-  "location": "MyStoreRegistration.userInputs(String,String,String,String,String)"
+  "location": "MyStoreRegistration.userInputs(String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 405233100,
+  "duration": 423048600,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStoreRegistration.Submit()"
 });
 formatter.result({
-  "duration": 1332087200,
+  "duration": 1219435900,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStoreRegistration.userIsRegistered()"
 });
 formatter.result({
-  "duration": 30800,
+  "duration": 850818800,
   "status": "passed"
 });
 });

@@ -26,7 +26,7 @@ public class MyStoreRegistration {
 
     public void userInputs(String title, String firstName, String lastName, String email, String password, String birthDate) {
 
-        if (title == "Mr") {
+        if (title.equals("Mr.")) {
             WebElement titleButton = driver.findElement(By.cssSelector("#customer-form > section > div:nth-child(2) > div.col-md-6.form-control-valign > label:nth-child(1) > span > input[type=radio]"));
             titleButton.click();
         } else {
