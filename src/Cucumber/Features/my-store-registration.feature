@@ -7,6 +7,6 @@ Feature: my store registration
     Then user is registered
 
     Examples:
-       |title|firstName|lastName |email                     |password|birthDate |
-       |Mr.  |Andrzej  |Kowolczyk|andrzej.kowolczyk@mail.com|12354   |11/09/1990|
-       |Mrs. |Barbara  |Piętas   |barbara.pietas@mail.com   |12345   |11/12/1990|
+      | title | firstName  | lastName | email            | password | birthDate  |
+      | Mrs.  | Anna       | Wąs      | aneczka@mail.com | 12354    | 11/09/1990 |
+      | Mr.   | Bartłomiej | Golas    | pip@mail.com     | 12345    | 11/12/1990 |
