@@ -1,262 +1,110 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/Cucumber/Features/my-store-registration.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/Cucumber/Features/change-user-information.feature");
 formatter.feature({
   "line": 1,
-  "name": "my store registration",
+  "name": "Change user information after login",
   "description": "",
-  "id": "my-store-registration",
+  "id": "change-user-information-after-login",
   "keyword": "Feature"
 });
-formatter.scenarioOutline({
+formatter.scenario({
   "line": 3,
-  "name": "user can register with proper data",
+  "name": "Change user birthday date, gender and sign up for a newsletter",
   "description": "",
-  "id": "my-store-registration;user-can-register-with-proper-data",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline"
+  "id": "change-user-information-after-login;change-user-birthday-date,-gender-and-sign-up-for-a-newsletter",
+  "type": "scenario",
+  "keyword": "Scenario"
 });
 formatter.step({
   "line": 4,
-  "name": "user is on registration page",
+  "name": "User is logged in to CodersLab shop",
   "keyword": "Given "
 });
 formatter.step({
   "line": 5,
-  "name": "user inputs \u003ctitle\u003e, \u003cfirstName\u003e, \u003clastName\u003e, \u003cemail\u003e, \u003cpassword\u003e, \u003cbirthDate\u003e",
+  "name": "User goes to UserInformationPage",
   "keyword": "When "
 });
 formatter.step({
   "line": 6,
-  "name": "user clicks Save button",
-  "keyword": "When "
+  "name": "User changes his birthday to \"05/06/1939\"",
+  "keyword": "And "
 });
 formatter.step({
   "line": 7,
-  "name": "user is registered",
-  "keyword": "Then "
+  "name": "User changes gender",
+  "keyword": "And "
 });
-formatter.examples({
+formatter.step({
+  "line": 8,
+  "name": "User signs up for our newsletter",
+  "keyword": "And "
+});
+formatter.step({
   "line": 9,
-  "name": "",
-  "description": "",
-  "id": "my-store-registration;user-can-register-with-proper-data;",
-  "rows": [
-    {
-      "cells": [
-        "title",
-        "firstName",
-        "lastName",
-        "email",
-        "password",
-        "birthDate"
-      ],
-      "line": 10,
-      "id": "my-store-registration;user-can-register-with-proper-data;;1"
-    },
-    {
-      "cells": [
-        "Mrs.",
-        "Anna",
-        "Wąs",
-        "aneczka@mail.com",
-        "12354",
-        "11/09/1990"
-      ],
-      "line": 11,
-      "id": "my-store-registration;user-can-register-with-proper-data;;2"
-    },
-    {
-      "cells": [
-        "Mr.",
-        "Bartłomiej",
-        "Golas",
-        "pip@mail.com",
-        "12345",
-        "11/12/1990"
-      ],
-      "line": 12,
-      "id": "my-store-registration;user-can-register-with-proper-data;;3"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.scenario({
-  "line": 11,
-  "name": "user can register with proper data",
-  "description": "",
-  "id": "my-store-registration;user-can-register-with-proper-data;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline"
+  "name": "User saves information",
+  "keyword": "And "
 });
 formatter.step({
-  "line": 4,
-  "name": "user is on registration page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 5,
-  "name": "user inputs Mrs., Anna, Wąs, aneczka@mail.com, 12354, 11/09/1990",
-  "matchedColumns": [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5
-  ],
-  "keyword": "When "
-});
-formatter.step({
-  "line": 6,
-  "name": "user clicks Save button",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 7,
-  "name": "user is registered",
+  "line": 10,
+  "name": "User sees \"Information successfully updated.\"",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "MyStoreRegistration.goToRegistrationPage()"
+  "location": "ChangeUserInfoSteps.userIsLoggedInToCodersLabShop()"
 });
 formatter.result({
-  "duration": 5024652700,
+  "duration": 6543842900,
+  "status": "passed"
+});
+formatter.match({
+  "location": "ChangeUserInfoSteps.userGoesToUserInformationPage()"
+});
+formatter.result({
+  "duration": 738852700,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Mrs.",
-      "offset": 12
-    },
-    {
-      "val": "Anna",
-      "offset": 18
-    },
-    {
-      "val": "Wąs",
-      "offset": 24
-    },
-    {
-      "val": "aneczka@mail.com",
-      "offset": 29
-    },
-    {
-      "val": "12354",
-      "offset": 47
-    },
-    {
-      "val": "11/09/1990",
-      "offset": 54
+      "val": "05/06/1939",
+      "offset": 30
     }
   ],
-  "location": "MyStoreRegistration.userInputs(String,String,String,String,String,String)"
+  "location": "ChangeUserInfoSteps.userChangesHisBirthdayTo(String)"
 });
 formatter.result({
-  "duration": 410286800,
-  "status": "passed"
+  "duration": 3877600,
+  "error_message": "java.lang.NullPointerException: Cannot invoke \"pageObjectPattern.pages.UserInfoPage.setBirthdate(String)\" because \"this.userInfoPage\" is null\r\n\tat pageObjectPattern.ChangeUserInfoSteps.userChangesHisBirthdayTo(ChangeUserInfoSteps.java:46)\r\n\tat ✽.And User changes his birthday to \"05/06/1939\"(src/Cucumber/Features/change-user-information.feature:6)\r\n",
+  "status": "failed"
 });
 formatter.match({
-  "location": "MyStoreRegistration.Submit()"
+  "location": "ChangeUserInfoSteps.userChangesGender()"
 });
 formatter.result({
-  "duration": 1143600700,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
-  "location": "MyStoreRegistration.userIsRegistered()"
+  "location": "ChangeUserInfoSteps.userSignsUpForOurNewsletter()"
 });
 formatter.result({
-  "duration": 803713200,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 12,
-  "name": "user can register with proper data",
-  "description": "",
-  "id": "my-store-registration;user-can-register-with-proper-data;;3",
-  "type": "scenario",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "line": 4,
-  "name": "user is on registration page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 5,
-  "name": "user inputs Mr., Bartłomiej, Golas, pip@mail.com, 12345, 11/12/1990",
-  "matchedColumns": [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5
-  ],
-  "keyword": "When "
-});
-formatter.step({
-  "line": 6,
-  "name": "user clicks Save button",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 7,
-  "name": "user is registered",
-  "keyword": "Then "
+  "status": "skipped"
 });
 formatter.match({
-  "location": "MyStoreRegistration.goToRegistrationPage()"
+  "location": "ChangeUserInfoSteps.userSavesInformation()"
 });
 formatter.result({
-  "duration": 2821139100,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Mr.",
-      "offset": 12
-    },
-    {
-      "val": "Bartłomiej",
-      "offset": 17
-    },
-    {
-      "val": "Golas",
-      "offset": 29
-    },
-    {
-      "val": "pip@mail.com",
-      "offset": 36
-    },
-    {
-      "val": "12345",
-      "offset": 50
-    },
-    {
-      "val": "11/12/1990",
-      "offset": 57
+      "val": "Information successfully updated.",
+      "offset": 11
     }
   ],
-  "location": "MyStoreRegistration.userInputs(String,String,String,String,String,String)"
+  "location": "ChangeUserInfoSteps.userSees(String)"
 });
 formatter.result({
-  "duration": 401791500,
-  "status": "passed"
-});
-formatter.match({
-  "location": "MyStoreRegistration.Submit()"
-});
-formatter.result({
-  "duration": 1146828800,
-  "status": "passed"
-});
-formatter.match({
-  "location": "MyStoreRegistration.userIsRegistered()"
-});
-formatter.result({
-  "duration": 813905000,
-  "status": "passed"
+  "status": "skipped"
 });
 });
