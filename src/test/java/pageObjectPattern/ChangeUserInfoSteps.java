@@ -39,11 +39,12 @@ public class ChangeUserInfoSteps {
         loggedUserLabel.click();
         WebElement userInformationForm = driver.findElement(By.cssSelector("#identity-link > span"));
         userInformationForm.click();
+        userInfoPage = new UserInfoPage(driver);
     }
 
     @And("^User changes his birthday to \"([^\"]*)\"$")
-    public void userChangesHisBirthdayTo(String birthDate) {
-        userInfoPage.setBirthdate(birthDate);
+    public void userChangesHisBirthdayTo(String date) {
+        userInfoPage.setBirthdate(date);
     }
 
 
