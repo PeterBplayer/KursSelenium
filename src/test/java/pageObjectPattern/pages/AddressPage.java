@@ -20,7 +20,8 @@ public class AddressPage {
     WebElement cityField;
 
     @FindBy(name = "id_country")
-    private Select countrySelect;
+//    private Select countrySelect;
+    WebElement countrySelect;
 
     @FindBy(css = "#content > div > div > form > footer > button")
     WebElement saveButton;
@@ -48,8 +49,8 @@ public class AddressPage {
         cityField.clear();
         cityField.sendKeys(city);
 
-        countrySelect.selectByVisibleText(country);
-
+        countrySelect.sendKeys(country);
+//        countrySelect.selectByVisibleText(country);
     }
 
     public void saveUserAddress() {
