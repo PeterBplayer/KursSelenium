@@ -15,15 +15,15 @@ public class SearchTest {
     @Before
     public void setUp() {
         // Uruchom nowy egzemplarz przeglądarki Firefox
-        // System.setProperty("webdriver.gecko.driver",
-        //            "src/main/resources/drivers/geckodriver.exe");
-        //     driver = new FirefoxDriver();
+         System.setProperty("webdriver.gecko.driver",
+                    "src/main/resources/drivers/geckodriver.exe");
+             driver = new FirefoxDriver();
 
 
         // Uruchom nowy egzemplarz przeglądarki Chrome
-        System.setProperty("webdriver.chrome.driver",
-                "src/main/resources/drivers/chromedriver.exe");
-        driver = new ChromeDriver();
+//        System.setProperty("webdriver.chrome.driver",
+//                "src/main/resources/drivers/chromedriver.exe");
+//        driver = new ChromeDriver();
 
         // Zmaksymalizuj okno przeglądarki
         driver.manage().window().maximize();
@@ -48,7 +48,7 @@ public class SearchTest {
     @After
     public void tearDown() throws Exception {
         // Zamknij przeglądarkę
-        driver.quit();
+        //driver.quit();
     }
 
 }
