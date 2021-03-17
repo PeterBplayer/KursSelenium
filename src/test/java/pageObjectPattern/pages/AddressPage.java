@@ -4,9 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-
-import javax.xml.xpath.XPath;
+import java.util.List;
 
 public class AddressPage {
 
@@ -25,7 +23,6 @@ public class AddressPage {
     WebElement cityField;
 
     @FindBy(name = "id_country")
-//    private Select countrySelect;
     WebElement countrySelect;
 
     @FindBy(name = "phone")
@@ -37,23 +34,9 @@ public class AddressPage {
     @FindBy(css = "#notifications > div > article > ul > li")
     WebElement successInformation;
 
-    @FindBy(xpath = "//*[@id=\"address-10169\"]/div[1]/h4")
-    WebElement successAlias;
-
-    @FindBy(xpath = "//*[@id=\"address-10167\"]/div[1]/address/text()[2]")
-    WebElement successAddress;
-
-    @FindBy(xpath = "//*[@id=\"address-10167\"]/div[1]/address/text()[3]")
-    WebElement successCity;
-
-    @FindBy(xpath = "//*[@id=\"address-10167\"]/div[1]/address/text()[4]")
-    WebElement successZip;
-
-    @FindBy(xpath = "//*[@id=\"address-10167\"]/div[1]/address/text()[5]")
-    WebElement successCountry;
-
-    @FindBy(xpath = "//*[@id=\"address-10167\"]/div[1]/address/text()[6]")
-    WebElement successPhone;
+    @FindBy(css = "article.address")
+//    @FindBy(xpath = "(//article[@class = 'address'])[last()]")
+    List<WebElement> addresses;
 
     public AddressPage(WebDriver driver) {
         this.driver = driver;
@@ -81,7 +64,6 @@ public class AddressPage {
         cityField.sendKeys(city);
 
         countrySelect.sendKeys(country);
-//        countrySelect.selectByVisibleText(country);
 
         phoneField.clear();
         phoneField.sendKeys(phone);
@@ -95,27 +77,9 @@ public class AddressPage {
         return successInformation.getText();
     }
 
-    public String getSuccessAlias() {
-        return successAlias.getText();
+    public String getLastAddressText() {
+      WebElement lastAddress = addresses.get(addresses.size()-1);
+      return lastAddress.getText();
     }
 
-    public String getSuccessAddress() {
-        return successAddress.getText();
-    }
-
-    public String getSuccessZip() {
-        return successZip.getText();
-    }
-
-    public String getSuccessCity() {
-        return successCity.getText();
-    }
-
-    public String getSuccessCountry() {
-        return successCountry.getText();
-    }
-
-    public String getSuccessPhone() {
-        return successPhone.getText();
-    }
 }

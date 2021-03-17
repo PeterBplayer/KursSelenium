@@ -56,12 +56,14 @@ public class NewAddressSteps {
 
     @Then("^User will see \"([^\"]*)\" and (.*), (.*), (.*), (.*), (.*), (.*)$")
     public void userWillSeeConfirmationAndNewAddress(String massage, String alias, String address, String zip, String city, String country, String phone) {
-        Assert.assertEquals("No confirmation",massage,addressPage.getConfirmation());
-        Assert.assertEquals("Wrong alias",alias, addressPage.getSuccessAlias());
-        Assert.assertEquals("Wrong address", address, addressPage.getSuccessAddress());
-        Assert.assertEquals("Wrong zip", zip, addressPage.getSuccessZip());
-        Assert.assertEquals("Wrong city", city, addressPage.getSuccessCity());
-        Assert.assertEquals("Wrong country", country, addressPage.getSuccessCountry());
-        Assert.assertEquals("Wrong phone", phone, addressPage.getSuccessPhone());
+        Assert.assertEquals(massage,addressPage.getConfirmation());
+        String lastAddressText = addressPage.getLastAddressText();
+        Assert.assertTrue(lastAddressText.contains(alias));
+        Assert.assertTrue(lastAddressText.contains(address));
+        Assert.assertTrue(lastAddressText.contains(zip));
+        Assert.assertTrue(lastAddressText.contains(city));
+        Assert.assertTrue(lastAddressText.contains(country));
+        Assert.assertTrue(lastAddressText.contains(phone));
+
     }
 }
