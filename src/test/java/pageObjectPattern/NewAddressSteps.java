@@ -1,6 +1,5 @@
 package pageObjectPattern;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -20,8 +19,8 @@ public class NewAddressSteps {
     AddressPage addressPage;
     WebDriver driver;
 
-    @Given("^User is properly logged in to CodersLab$")
-    public void UserIsProperlyLogged() {
+    @Given("User is logged in to my-store")
+    public void userIsLoggedInToMyStore() {
         System.setProperty("webdriver.chrome.driver",
                 "src/main/resources/drivers/chromedriver.exe");
         driver = new ChromeDriver();
@@ -30,30 +29,39 @@ public class NewAddressSteps {
 
         driver.get("https://prod-kurs.coderslab.pl/index.php?controller=authentication");
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.loginAs("pip@mail.com","12345");
+        loginPage.loginAs("pip@mail.com", "12345");
     }
 
-    @When("^User goes to UserAddressPage$")
-    public void userGoesToUserNewAddressPage() {
+    @When("^User goes to Your Account page clicks Addresses and then click Create new address$")
+    public void userGoesToCreateNewAddressForm() {
         WebElement loggedUserLabel = driver.findElement(By.cssSelector("#_desktop_user_info > div > a.account > span"));
         loggedUserLabel.click();
-        WebElement newAddressForm = driver.findElement(By.cssSelector("#address-link > span"));
-        newAddressForm.click();
+        WebElement userAddressLabel = driver.findElement(By.cssSelector("#addresses-link > span"));
+        userAddressLabel.click();
+        WebElement createNewAddressLink = driver.findElement(By.cssSelector("#content > div.addresses-footer > a > span"));
+        createNewAddressLink.click();
         addressPage = new AddressPage(driver);
     }
 
-    @And("^User fill new address fields: \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\"$")
-    public void userFillNewAddressFields(String address, String zip, String city, String country) {
-        addressPage.fillNewAddress(address, zip, city, country);
+
+    @And("^User inputs (.*), (.*), (.*), (.*), (.*), (.*)$")
+    public void userInputsAliasAddressZipCityCountryPhone(String alias, String address, String zip, String city, String country, String phone) {
+        addressPage.fillNewAddress(alias, address, zip, city, country, phone);
     }
 
-    @And("^User saves new shipping address$")
-    public void userSavesNewShippingAddress() {
+    @And("^User submits new address$")
+    public void userSubmitsNewAddress() {
         addressPage.saveUserAddress();
     }
 
-    @Then("^User will see \"([^\"]*)\"$")
-    public void userWillSee(String massage) {
-        Assert.assertEquals(massage, addressPage.getConfirmation());
+    @Then("^User will see \"([^\"]*)\" and (.*), (.*), (.*), (.*), (.*), (.*)$")
+    public void userWillSeeConfirmationAndNewAddress(String massage, String alias, String address, String zip, String city, String country, String phone) {
+        Assert.assertEquals("No confirmation",massage,addressPage.getConfirmation());
+        Assert.assertEquals("Wrong alias",alias, addressPage.getSuccessAlias());
+        Assert.assertEquals("Wrong address", address, addressPage.getSuccessAddress());
+        Assert.assertEquals("Wrong zip", zip, addressPage.getSuccessZip());
+        Assert.assertEquals("Wrong city", city, addressPage.getSuccessCity());
+        Assert.assertEquals("Wrong country", country, addressPage.getSuccessCountry());
+        Assert.assertEquals("Wrong phone", phone, addressPage.getSuccessPhone());
     }
 }
