@@ -30,11 +30,13 @@ public class ShoppingTest {
 
     @Test
     public void OrderingProduct() {
+        //Product search
         WebElement searchField = driver.findElement(By.name("s"));
         searchField.sendKeys("Hummingbird Printed Sweater");
         searchField.submit();
         WebElement sweater = driver.findElement(By.cssSelector("#js-product-list > div.products.row > article:nth-child(1)"));
         sweater.click();
+        //Adding to cart
         WebElement quantityField = driver.findElement(By.id("quantity_wanted"));
         quantityField.click();
         quantityField.clear();
@@ -46,6 +48,7 @@ public class ShoppingTest {
         addToCartButton.click();
         WebElement proceedToCheckoutButton = driver.findElement(By.cssSelector("#blockcart-modal > div > div > div.modal-body > div > div.col-md-7 > div > div > a"));
         proceedToCheckoutButton.click();
+        //Checkout
         driver.findElement(By.cssSelector("#main > div > div.cart-grid-right.col-xs-12.col-lg-4 > div.card.cart-summary > div.checkout.cart-detailed-actions.card-block > div > a")).click();
         driver.findElement(By.name("confirm-addresses")).click();
         driver.findElement(By.name("confirmDeliveryOption")).click();
@@ -56,6 +59,7 @@ public class ShoppingTest {
 
     @After
     public void tearDown() throws IOException {
+        //Order confirmation screenshot
         File confirmationScreenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(confirmationScreenshot, new File("C:\\Users\\Użytkownik\\Desktop\\Piotr\\Coders Lab\\Java\\KursSelenium\\screenshot.png"));
         driver.quit();
