@@ -68,6 +68,18 @@ formatter.examples({
       ],
       "line": 12,
       "id": "add-new-shipping-address;user-can-additional-shipping-address;;2"
+    },
+    {
+      "cells": [
+        "Dacza",
+        "Burbon 12",
+        "01-001",
+        "Leeds",
+        "United Kingdom",
+        "111111111"
+      ],
+      "line": 13,
+      "id": "add-new-shipping-address;user-can-additional-shipping-address;;3"
     }
   ],
   "keyword": "Examples"
@@ -125,14 +137,14 @@ formatter.match({
   "location": "NewAddressSteps.userIsLoggedInToMyStore()"
 });
 formatter.result({
-  "duration": 6693583699,
+  "duration": 6433200400,
   "status": "passed"
 });
 formatter.match({
   "location": "NewAddressSteps.userGoesToCreateNewAddressForm()"
 });
 formatter.result({
-  "duration": 967869200,
+  "duration": 1053942400,
   "status": "passed"
 });
 formatter.match({
@@ -165,14 +177,14 @@ formatter.match({
   "location": "NewAddressSteps.userInputsAliasAddressZipCityCountryPhone(String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 544761700,
+  "duration": 536138600,
   "status": "passed"
 });
 formatter.match({
   "location": "NewAddressSteps.userSubmitsNewAddress()"
 });
 formatter.result({
-  "duration": 514530200,
+  "duration": 711422400,
   "status": "passed"
 });
 formatter.match({
@@ -209,7 +221,147 @@ formatter.match({
   "location": "NewAddressSteps.userWillSeeConfirmationAndNewAddress(String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 64027599,
+  "duration": 757757400,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 13,
+  "name": "User can additional shipping address",
+  "description": "",
+  "id": "add-new-shipping-address;user-can-additional-shipping-address;;3",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 4,
+  "name": "User is logged in to my-store",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 5,
+  "name": "User goes to Your Account page clicks Addresses and then click Create new address",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 6,
+  "name": "User inputs Dacza, Burbon 12, 01-001, Leeds, United Kingdom, 111111111",
+  "matchedColumns": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 7,
+  "name": "User submits new address",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 8,
+  "name": "User will see \"Address successfully added!\" and Dacza, Burbon 12, 01-001, Leeds, United Kingdom, 111111111",
+  "matchedColumns": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "NewAddressSteps.userIsLoggedInToMyStore()"
+});
+formatter.result({
+  "duration": 5542265600,
+  "status": "passed"
+});
+formatter.match({
+  "location": "NewAddressSteps.userGoesToCreateNewAddressForm()"
+});
+formatter.result({
+  "duration": 1030460400,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Dacza",
+      "offset": 12
+    },
+    {
+      "val": "Burbon 12",
+      "offset": 19
+    },
+    {
+      "val": "01-001",
+      "offset": 30
+    },
+    {
+      "val": "Leeds",
+      "offset": 38
+    },
+    {
+      "val": "United Kingdom",
+      "offset": 45
+    },
+    {
+      "val": "111111111",
+      "offset": 61
+    }
+  ],
+  "location": "NewAddressSteps.userInputsAliasAddressZipCityCountryPhone(String,String,String,String,String,String)"
+});
+formatter.result({
+  "duration": 526041100,
+  "status": "passed"
+});
+formatter.match({
+  "location": "NewAddressSteps.userSubmitsNewAddress()"
+});
+formatter.result({
+  "duration": 442903000,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Address successfully added!",
+      "offset": 15
+    },
+    {
+      "val": "Dacza",
+      "offset": 48
+    },
+    {
+      "val": "Burbon 12",
+      "offset": 55
+    },
+    {
+      "val": "01-001",
+      "offset": 66
+    },
+    {
+      "val": "Leeds",
+      "offset": 74
+    },
+    {
+      "val": "United Kingdom",
+      "offset": 81
+    },
+    {
+      "val": "111111111",
+      "offset": 97
+    }
+  ],
+  "location": "NewAddressSteps.userWillSeeConfirmationAndNewAddress(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "duration": 733248200,
   "status": "passed"
 });
 });

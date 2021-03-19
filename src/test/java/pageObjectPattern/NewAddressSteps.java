@@ -64,6 +64,6 @@ public class NewAddressSteps {
         Assert.assertTrue(lastAddressText.contains(city));
         Assert.assertTrue(lastAddressText.contains(country));
         Assert.assertTrue(lastAddressText.contains(phone));
-
+        driver.quit();
     }
 }

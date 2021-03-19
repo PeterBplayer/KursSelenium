@@ -10,3 +10,4 @@ Feature: Add new shipping address
     Examples:
       | alias | address   | zip    | city   | country        | phone     |
       | Firma | Onions 12 | 11-111 | Londek | United Kingdom | 111111111 |
+      | Dacza | Burbon 12 | 01-001 | Leeds  | United Kingdom | 111111111 |
