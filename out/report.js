@@ -1,110 +1,215 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/Cucumber/Features/change-user-information.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/Cucumber/Features/add-new-address.feature");
 formatter.feature({
   "line": 1,
-  "name": "Change user information after login",
+  "name": "Add new shipping address",
   "description": "",
-  "id": "change-user-information-after-login",
+  "id": "add-new-shipping-address",
   "keyword": "Feature"
 });
-formatter.scenario({
+formatter.scenarioOutline({
   "line": 3,
-  "name": "Change user birthday date, gender and sign up for a newsletter",
+  "name": "User can additional shipping address",
   "description": "",
-  "id": "change-user-information-after-login;change-user-birthday-date,-gender-and-sign-up-for-a-newsletter",
-  "type": "scenario",
-  "keyword": "Scenario"
+  "id": "add-new-shipping-address;user-can-additional-shipping-address",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline"
 });
 formatter.step({
   "line": 4,
-  "name": "User is logged in to CodersLab shop",
+  "name": "User is logged in to my-store",
   "keyword": "Given "
 });
 formatter.step({
   "line": 5,
-  "name": "User goes to UserInformationPage",
+  "name": "User goes to Your Account page clicks Addresses and then click Create new address",
   "keyword": "When "
 });
 formatter.step({
   "line": 6,
-  "name": "User changes his birthday to \"05/06/1939\"",
+  "name": "User inputs \u003calias\u003e, \u003caddress\u003e, \u003czip\u003e, \u003ccity\u003e, \u003ccountry\u003e, \u003cphone\u003e",
   "keyword": "And "
 });
 formatter.step({
   "line": 7,
-  "name": "User changes gender",
+  "name": "User submits new address",
   "keyword": "And "
 });
 formatter.step({
   "line": 8,
-  "name": "User signs up for our newsletter",
-  "keyword": "And "
+  "name": "User will see \"Address successfully added!\" and \u003calias\u003e, \u003caddress\u003e, \u003czip\u003e, \u003ccity\u003e, \u003ccountry\u003e, \u003cphone\u003e",
+  "keyword": "Then "
 });
-formatter.step({
-  "line": 9,
-  "name": "User saves information",
-  "keyword": "And "
-});
-formatter.step({
+formatter.examples({
   "line": 10,
-  "name": "User sees \"Information successfully updated.\"",
+  "name": "",
+  "description": "",
+  "id": "add-new-shipping-address;user-can-additional-shipping-address;",
+  "rows": [
+    {
+      "cells": [
+        "alias",
+        "address",
+        "zip",
+        "city",
+        "country",
+        "phone"
+      ],
+      "line": 11,
+      "id": "add-new-shipping-address;user-can-additional-shipping-address;;1"
+    },
+    {
+      "cells": [
+        "Firma",
+        "Onions 12",
+        "11-111",
+        "Londek",
+        "United Kingdom",
+        "111111111"
+      ],
+      "line": 12,
+      "id": "add-new-shipping-address;user-can-additional-shipping-address;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.scenario({
+  "line": 12,
+  "name": "User can additional shipping address",
+  "description": "",
+  "id": "add-new-shipping-address;user-can-additional-shipping-address;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 4,
+  "name": "User is logged in to my-store",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 5,
+  "name": "User goes to Your Account page clicks Addresses and then click Create new address",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 6,
+  "name": "User inputs Firma, Onions 12, 11-111, Londek, United Kingdom, 111111111",
+  "matchedColumns": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 7,
+  "name": "User submits new address",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 8,
+  "name": "User will see \"Address successfully added!\" and Firma, Onions 12, 11-111, Londek, United Kingdom, 111111111",
+  "matchedColumns": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
   "keyword": "Then "
 });
 formatter.match({
-  "location": "ChangeUserInfoSteps.userIsLoggedInToCodersLabShop()"
+  "location": "NewAddressSteps.userIsLoggedInToMyStore()"
 });
 formatter.result({
-  "duration": 6543842900,
+  "duration": 6693583699,
   "status": "passed"
 });
 formatter.match({
-  "location": "ChangeUserInfoSteps.userGoesToUserInformationPage()"
+  "location": "NewAddressSteps.userGoesToCreateNewAddressForm()"
 });
 formatter.result({
-  "duration": 738852700,
+  "duration": 967869200,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "05/06/1939",
+      "val": "Firma",
+      "offset": 12
+    },
+    {
+      "val": "Onions 12",
+      "offset": 19
+    },
+    {
+      "val": "11-111",
       "offset": 30
+    },
+    {
+      "val": "Londek",
+      "offset": 38
+    },
+    {
+      "val": "United Kingdom",
+      "offset": 46
+    },
+    {
+      "val": "111111111",
+      "offset": 62
     }
   ],
-  "location": "ChangeUserInfoSteps.userChangesHisBirthdayTo(String)"
+  "location": "NewAddressSteps.userInputsAliasAddressZipCityCountryPhone(String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 3877600,
-  "error_message": "java.lang.NullPointerException: Cannot invoke \"pageObjectPattern.pages.UserInfoPage.setBirthdate(String)\" because \"this.userInfoPage\" is null\r\n\tat pageObjectPattern.ChangeUserInfoSteps.userChangesHisBirthdayTo(ChangeUserInfoSteps.java:46)\r\n\tat ✽.And User changes his birthday to \"05/06/1939\"(src/Cucumber/Features/change-user-information.feature:6)\r\n",
-  "status": "failed"
+  "duration": 544761700,
+  "status": "passed"
 });
 formatter.match({
-  "location": "ChangeUserInfoSteps.userChangesGender()"
+  "location": "NewAddressSteps.userSubmitsNewAddress()"
 });
 formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "ChangeUserInfoSteps.userSignsUpForOurNewsletter()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "ChangeUserInfoSteps.userSavesInformation()"
-});
-formatter.result({
-  "status": "skipped"
+  "duration": 514530200,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Information successfully updated.",
-      "offset": 11
+      "val": "Address successfully added!",
+      "offset": 15
+    },
+    {
+      "val": "Firma",
+      "offset": 48
+    },
+    {
+      "val": "Onions 12",
+      "offset": 55
+    },
+    {
+      "val": "11-111",
+      "offset": 66
+    },
+    {
+      "val": "Londek",
+      "offset": 74
+    },
+    {
+      "val": "United Kingdom",
+      "offset": 82
+    },
+    {
+      "val": "111111111",
+      "offset": 98
     }
   ],
-  "location": "ChangeUserInfoSteps.userSees(String)"
+  "location": "NewAddressSteps.userWillSeeConfirmationAndNewAddress(String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 64027599,
+  "status": "passed"
 });
 });
