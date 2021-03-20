@@ -137,14 +137,14 @@ formatter.match({
   "location": "NewAddressSteps.userIsLoggedInToMyStore()"
 });
 formatter.result({
-  "duration": 6433200400,
+  "duration": 10227961700,
   "status": "passed"
 });
 formatter.match({
   "location": "NewAddressSteps.userGoesToCreateNewAddressForm()"
 });
 formatter.result({
-  "duration": 1053942400,
+  "duration": 1399340500,
   "status": "passed"
 });
 formatter.match({
@@ -177,14 +177,14 @@ formatter.match({
   "location": "NewAddressSteps.userInputsAliasAddressZipCityCountryPhone(String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 536138600,
+  "duration": 676781600,
   "status": "passed"
 });
 formatter.match({
   "location": "NewAddressSteps.userSubmitsNewAddress()"
 });
 formatter.result({
-  "duration": 711422400,
+  "duration": 419187300,
   "status": "passed"
 });
 formatter.match({
@@ -221,7 +221,7 @@ formatter.match({
   "location": "NewAddressSteps.userWillSeeConfirmationAndNewAddress(String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 757757400,
+  "duration": 1179810800,
   "status": "passed"
 });
 formatter.scenario({
@@ -277,14 +277,14 @@ formatter.match({
   "location": "NewAddressSteps.userIsLoggedInToMyStore()"
 });
 formatter.result({
-  "duration": 5542265600,
+  "duration": 5766943900,
   "status": "passed"
 });
 formatter.match({
   "location": "NewAddressSteps.userGoesToCreateNewAddressForm()"
 });
 formatter.result({
-  "duration": 1030460400,
+  "duration": 860333400,
   "status": "passed"
 });
 formatter.match({
@@ -317,14 +317,14 @@ formatter.match({
   "location": "NewAddressSteps.userInputsAliasAddressZipCityCountryPhone(String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 526041100,
+  "duration": 619570700,
   "status": "passed"
 });
 formatter.match({
   "location": "NewAddressSteps.userSubmitsNewAddress()"
 });
 formatter.result({
-  "duration": 442903000,
+  "duration": 383963900,
   "status": "passed"
 });
 formatter.match({
@@ -361,7 +361,7 @@ formatter.match({
   "location": "NewAddressSteps.userWillSeeConfirmationAndNewAddress(String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 733248200,
+  "duration": 821151000,
   "status": "passed"
 });
 });

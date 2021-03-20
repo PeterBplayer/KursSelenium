@@ -29,7 +29,7 @@ public class ShoppingTest {
     }
 
     @Test
-    public void OrderingProduct() {
+    public void OrderingProduct() throws InterruptedException {
         //Product search
         WebElement searchField = driver.findElement(By.name("s"));
         searchField.sendKeys("Hummingbird Printed Sweater");
@@ -37,13 +37,12 @@ public class ShoppingTest {
         WebElement sweater = driver.findElement(By.cssSelector("#js-product-list > div.products.row > article:nth-child(1)"));
         sweater.click();
         //Adding to cart
+        WebElement sizeList = driver.findElement(By.id("group_1"));
+        sizeList.sendKeys("M");
+        Thread.sleep(500);
         WebElement quantityField = driver.findElement(By.id("quantity_wanted"));
-        quantityField.click();
         quantityField.clear();
         quantityField.sendKeys("5");
-        WebElement sizeList = driver.findElement(By.id("group_1"));
-        sizeList.click();
-        sizeList.sendKeys("M");
         WebElement addToCartButton = driver.findElement(By.cssSelector("#add-to-cart-or-refresh > div.product-add-to-cart > div > div.add > button"));
         addToCartButton.click();
         WebElement proceedToCheckoutButton = driver.findElement(By.cssSelector("#blockcart-modal > div > div > div.modal-body > div > div.col-md-7 > div > div > a"));
